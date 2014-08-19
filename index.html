@@ -2,6 +2,7 @@
 <html>
     <head>
     	<title>Tasks management</title>
+    	<meta http-equiv="Content-Type" content="text/html charset=UTF-8">
 
         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="css/tareas.css">
@@ -25,6 +26,13 @@
 	            <!--inmprimimos el texto de la tarea de cada iteracción -->
 	            {{tarea.texto}}</span>
 	        </li>
+	        	<!--Se llama a la funcion agregarTarea del controlador en el que estamos cuando se envía en form mediante el scope-->
+	            <form ng-submit="agregarTarea()">
+	            	<!--Lo que escribamos en este input estará en el modelo que le indicamos.-->
+            		<input type="text" ng-model="textoNuevaTarea" size="30"placeholder="Añadir nueva tarea">
+            		<!--Le añadimos unas clases de Bootstrap al elemento button-->
+            		<button class="btn btn-primary" type="submit">Añadir </button>
+        		</form>
         </ul>
     </div>
 </body>
