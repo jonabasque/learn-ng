@@ -9,6 +9,17 @@ function ControladorTareas($scope){
             $scope.tareas.push({texto: $scope.textoNuevaTarea, realizada:false});
             //y limpiamos el texto del input una vez agregada la tarea.
             $scope.textoNuevaTarea = '';
-        }
+        };
+        //agregamos al scope del controlador un método que podremos llamar desde el HTML 
+        //cuando querramos.
+        $scope.tareasRestantes = function() {
+            var cuenta = 0;
+            //por cada tarea del array tareas del scope ....
+            angular.forEach($scope.tareas,function(tarea) {
+                //..... añadimos un 0 o un 1 dependiendo de si está realizada.
+                cuenta += tarea.realizada ? 0 : 1;
+            });
+            return cuenta;
+        };
 
 }
