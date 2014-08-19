@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Tasks management</title>
+
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="css/tareas.css">
+
+        <script src="js/angular.js"></script>
+        <script src="js/tareas.js"></script>
+    </head>
+<!--Le decimos al elemento bdoy que va a recibir una app de Angular.js-->
+<body ng-app>
+	<!--Le decimos al elemento que vamos a usar este controlador, y todas las variables, metodos, etc... que le pasemos al scope del controlador las tendremos disponibles en este elemento-->
+    <div ng-controller="ControladorTareas">
+        <h2>Lista de Tareas</h2>
+        <ul class="unstyled">
+        <!--Repite el li por cada elemento que hay en el array tareas-->
+        <li>
+           
+            <!-- ligamos el input de cada elemento del array con la propiedad -done- que nos dice si está hecha o no.-->
+            
+            <span>
+            <!--inmprimimos el texto de la tarea de cada iteracción -->
+            {{tareas[0].texto}}</span>
+        </li>
+        </ul>
+    </div>
+</body>
+</html>
