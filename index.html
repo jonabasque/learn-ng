@@ -15,15 +15,14 @@
     <div ng-controller="ControladorTareas">
         <h2>Lista de Tareas</h2>
         <ul class="unstyled">
-        <!--Repite el li por cada elemento que hay en el array tareas-->
-        <li>
-           
-            <!-- ligamos el input de cada elemento del array con la propiedad -done- que nos dice si está hecha o no.-->
-            
-            <span>
-            <!--inmprimimos el texto de la tarea de cada iteracción -->
-            {{tareas[0].texto}}</span>
-        </li>
+	        <!--Repite el li por cada elemento que hay en el array tareas-->
+	        <li ng-repeat="tarea in tareas">
+	            <!-- ligamos el input de cada elemento del array con la propiedad -done- que nos dice si está hecha o no.-->
+	            <input type="checkbox">
+	            <span>
+	            <!--inmprimimos el texto de la tarea de cada iteracción -->
+	            {{tarea.texto}}</span>
+	        </li>
         </ul>
     </div>
 </body>
