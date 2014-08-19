@@ -22,4 +22,17 @@ function ControladorTareas($scope){
             return cuenta;
         };
 
+        //agregamos otro método que permite eliminar tareas.
+        $scope.eliminar = function() {
+            //primero guardamos las tareas que existen en una variable...
+            var tareasViejas = $scope.tareas;
+            //después vaciamos el array de tareas existente.
+            $scope.tareas = [];
+            //y recorremos el array de tareas viejas incluyendo las realizadas 
+            angular.forEach(tareasViejas, function(tarea){
+                //tarea es el indice del array de cada iteracción
+                if (!tarea.realizada) $scope.tareas.push(tarea);
+            });
+        }
+
 }

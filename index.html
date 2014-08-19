@@ -18,6 +18,7 @@
 
         <!--Mostramos las tareas que nos faltan de las que tenemos llamando a otro método que pasamos al controlador-->
         <span>{{tareasRestantes()}} de {{tareas.length}}</span>
+        [ <a classs="text-danger" href="" ng-click="eliminar()">eliminar tareas</a> ]
         <ul class="unstyled">
 	        <!--Repite el li por cada elemento que hay en el array tareas-->
 	        <li ng-repeat="tarea in tareas">
