@@ -17,9 +17,11 @@
         <ul class="unstyled">
 	        <!--Repite el li por cada elemento que hay en el array tareas-->
 	        <li ng-repeat="tarea in tareas">
-	            <!-- ligamos el input de cada elemento del array con la propiedad -done- que nos dice si está hecha o no.-->
-	            <input type="checkbox">
-	            <span>
+	            <!-- ligamos el input de cada elemento del array con la propiedad -realizada- que nos dice si está hecha o no. 
+	            Y la realizada estará checkeada de inicio-->
+	            <input type="checkbox" ng-model="tarea.realizada">
+	            <!--Construimos una clase con true o false, dependiendo si está realizada o no la tarea.-->
+	            <span class="realizada-{{tarea.realizada}}">
 	            <!--inmprimimos el texto de la tarea de cada iteracción -->
 	            {{tarea.texto}}</span>
 	        </li>
